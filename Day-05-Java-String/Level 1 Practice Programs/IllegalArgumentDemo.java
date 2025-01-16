@@ -22,6 +22,7 @@ public class IllegalArgumentDemo {
         try {
           
             System.out.println("Trying to get a substring with invalid indices...");
+           
             System.out.println(input.substring(5, 3)); 
         } catch (IllegalArgumentException e) {
             

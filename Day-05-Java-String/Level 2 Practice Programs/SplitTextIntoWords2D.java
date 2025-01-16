@@ -3,19 +3,42 @@
 import java.util.Scanner;
 
 //Program to split text into words and return the words with their lengths in a 2D array
-class WordLength2DArray{
+class SplitTextIntoWords2D{
 
-    // method to split the text into words ui
+    //method to find length using user define method
+	public static int findTextLength(String text){
+		//variable to store length 
+		int length = 0;
+		
+		//variable to track index
+		int index = 0;
+		
+		//infinite loop to find length
+		while(true){
+			try{
+				//get character at index
+				text.charAt(index++);
+				//increment length by 1
+				length++;
+			}catch(StringIndexOutOfBoundsException exception){
+				//break the loop
+				break;
+			}
+		}
+		return length;
+	}
+    // method to split the text into words
     public static String[] splitTextIntoWords(String text) {
         // variable to store word and count of word
         String word = "";
         int wordCount = 0; 
+		int length = findTextLength(text);
 
-        for (int i = 0; i < text.length(); i++) {
+        for (int i = 0; i < length; i++) {
             char ch = text.charAt(i);
             if (ch != ' ') {
                 // build the word character
-                word = word + ch;
+                word += ch;
             } else {
                 if (!word.isEmpty()) {
                     // increase word count
@@ -37,11 +60,11 @@ class WordLength2DArray{
         word = "";
 
         // copy words from word list to word array
-        for (int i = 0; i < text.length(); i++) {
+        for (int i = 0; i < length; i++) {
             char ch = text.charAt(i);
             if (ch != ' ') {
                 // build the word
-                word = word + ch;
+                word += ch;
             } else {
                 if (!word.isEmpty()) {
                     // add the word to the array
@@ -59,20 +82,6 @@ class WordLength2DArray{
         return wordArray;
     }
 
-    // method to find the length of a string
-    public static int getStringLength(String word) {
-        // return 0 if word is null
-        if (word == null) {
-            return 0;
-        }
-        int length = 0;
-        for (char ch : word.toCharArray()) {
-            length++;
-        }
-        // return length of word
-        return length;
-    }
-
     // method to create a 2D array to store words and their lengths
     public static String[][] getWordsWithLengths(String[] words) {
         // 2D array to store words and length
@@ -80,7 +89,7 @@ class WordLength2DArray{
 
         for (int i = 0; i < words.length; i++) {
             wordsWithLengths[i][0] = words[i];
-            wordsWithLengths[i][1] = String.valueOf(getStringLength(words[i]));
+            wordsWithLengths[i][1] = String.valueOf(findTextLength(words[i]));
         }
 
         return wordsWithLengths;

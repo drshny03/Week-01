@@ -18,8 +18,8 @@ public class ArrayIndexDemo {
         try {
             System.out.println("Name at index " + index + ": " + names[index]);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("hat index is out of bounds. Try using a valid.");
-        } catch (RuntimeException e) {
+            System.out.println("That index is out of bounds. Try using a valid.");
+        } catch (ArrayOutOfBoundException e) {
             System.out.println("Something went wrong: " + e.getMessage());
         }
     }

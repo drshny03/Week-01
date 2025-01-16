@@ -19,8 +19,8 @@ public class NumberFormatDemo {
             System.out.println("Converted number: " + number);
         } catch (NumberFormatException e) {
             System.out.println("Caught NumberFormatException: Input is not a valid number.");
-        } catch (RuntimeException e) {
-            System.out.println("Caught RuntimeException: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            System.out.println("Caught NumberFormatException: " + e.getMessage());
         }
     }
 

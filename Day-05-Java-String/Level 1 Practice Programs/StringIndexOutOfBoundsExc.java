@@ -17,7 +17,7 @@ public class StringIndexOutOfBoundsExc
                 
             } catch (StringIndexOutOfBoundsException e) {
        
-                System.out.println("Caught StringIndexOutOfBoundsException");
+                System.out.println("StringIndexOutOfBoundsException");
             }
         }
     
